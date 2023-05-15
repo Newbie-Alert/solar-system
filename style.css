@@ -1,25 +1,37 @@
 * {
-  margin: 0; padding: 0; box-sizing: border-box;
+  margin: 0; box-sizing: border-box;
 }
 
 body {
   width: 100%; height: 100vh;
-  background: linear-gradient(120deg,rgba(0,0,0,0.9), rgba(0,0,0,0.6)), url('./img/bg.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
   position: relative;
 }
 
-.carousel-container {
-  width: 3000px;
+p {
+  display: none;
+}
+.zoom-out {
+  position: absolute;
+  top: 50%;left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 5rem;
+  opacity: 0;
+  transition: opacity  3s ease;
+  z-index: 1;
 }
 
 #solar-system {
-  width: 1500px;
+  width: 100vw; height: 100vh;
+  background: linear-gradient(120deg,rgba(0,0,0,0.9), rgba(0,0,0,0.6)), url('./img/bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s ease;
 }
+
 
 .mercury-line, .venus-line, .earth-line, .mars-line, .jupiter-line, .saturn-line, .uranos-line, .neptune-line {
   border-radius: 50%;
@@ -27,6 +39,17 @@ body {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
+  opacity: 0.5;
+  transition: opacity 0.5s ease;
+  /* animation: bgRotate 30s linear infinite; */
+}
+@keyframes bgRotate {
+  from {
+    rotate: (0deg);
+  }
+  to {
+    rotate: 360deg;
+  }
 }
 
 #sun {
@@ -43,11 +66,11 @@ body {
   width: 20px; height: 20px;
   background: #a94c2b;
   border-radius: 50%;
-  box-shadow: -4px 2px 56px #f9c05f;
+  box-shadow: 2px -2px 20px #ffaa18;
   position: absolute;
   left: 45%; top: 45%;
   transform: translate(-50%, -50%);
-  animation: orbitMer 2s linear infinite;
+  animation: orbitMer 4s linear infinite;
 }
 
 #mercury p {
@@ -74,11 +97,11 @@ body {
   width: 30px; height: 30px;
   background: #d64035;
   border-radius: 50%;
-  box-shadow: -4px 2px 56px #d33d18;
+  box-shadow: -4px 2px 40px #ffa38d;
   position: absolute;
   left: 44%; top: 45%;
   transform: translate(-50%, -50%);
-  animation: orbitVen 7s linear infinite;
+  animation: orbitVen 9s linear infinite;
 }
 @keyframes orbitVen {
   from{
@@ -105,11 +128,11 @@ body {
   background: url('./img/earth/textures/Material.002_diffuse.jpeg');
   background-size: cover;
   border-radius: 50%;
-  box-shadow: -4px 4px 26px #5f9df9;
+  box-shadow: -4px 4px 15px #5f9df9;
   position: absolute;
   left: 44%; top: 44%;
   transform: translate(-50%, -50%);
-  animation: orbitEar 12s linear infinite;
+  animation: orbitEar 9s linear infinite;
 }
 #earth p {
   position: absolute;
@@ -140,11 +163,11 @@ body {
   background: url('./img/the_moon/textures/Material__50_baseColor.jpeg');
   background-size: cover;
   border-radius: 50%;
-  box-shadow: -4px 4px 100px #ffffff;
+  box-shadow: -4px 4px 5px #ffffff;
   position: absolute;
-  left: 45%; top: 47%;
+  left: 45%; top: 46%;
   transform: translate(-50%, -50%);
-  animation: orbitMoon 5s linear infinite;
+  animation: orbitMoon 1.5s linear infinite;
 }
 @keyframes orbitMoon {
   from{
@@ -177,9 +200,282 @@ body {
 }
 @keyframes orbitMar {
   from{
-    transform: rotate(0deg) translateX(270px) rotate(0deg);
+    transform: rotate(0deg) translateX(265px) rotate(0deg);
   }
   to{
-    transform: rotate(360deg) translateX(270px) rotate(-360deg);
+    transform: rotate(360deg) translateX(265px) rotate(-360deg);
   }
+}
+
+#mars p {
+  position: absolute;
+  left: 5px;
+  top: -20px;
+  color: white;
+}
+
+
+
+.jupiter-line {
+  width: 650px; height:650px;
+}
+
+#jupiter {
+  width: 40px; height: 40px;
+  background: url('./img/jupiter/textures/jupiter_diffuse.jpeg');
+  border-radius: 50%;
+  box-shadow: -4px 2px 40px #d33d18;
+  position: absolute;
+  left: 47%; top: 47%;
+  transform: translate(-50%, -50%);
+  animation: orbitJup 30s linear infinite;
+}
+@keyframes orbitJup {
+  from{
+    transform: rotate(0deg) translateX(327px) rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg) translateX(327px) rotate(-360deg);
+  }
+}
+
+#jupiter p {
+  position: absolute;
+  left: 30px;
+  top: -9px;
+  color: white;
+}
+
+.saturn-inner-line{
+  width: 50px; height: 30px;
+  border-radius: 50%;
+  border: 1px dotted rgb(172, 102, 62);
+  position: relative;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+}
+.saturn-inner-line2{
+  width: 53px; height: 33px;
+  border-radius: 50%;
+  border: 1px dotted rgb(255, 176, 130);
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+}
+.saturn-inner-line3{
+  width: 56px; height: 36px;
+  border-radius: 50%;
+  border: 1px dotted rgb(255, 160, 104);
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+}
+.saturn-inner-line4{
+  width: 59px; height: 39px;
+  border-radius: 50%;
+  border: 1px dotted rgb(255, 146, 83);
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+}
+.saturn-inner-line5{
+  width: 62px; height: 42px;
+  border-radius: 50%;
+  border: 1px dotted rgb(66, 25, 2);
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.saturn-line {
+  width: 755px; height:755px;
+}
+
+#saturn {
+  width: 40px; height: 40px;
+  background: url('./img/jupiter/textures/jupiter_diffuse.jpeg');
+  border-radius: 50%;
+  box-shadow: -4px 2px 56px #ffa27e;
+  position: absolute;
+  left: 47%; top: 47%;
+  transform: translate(-50%, -50%);
+  animation: orbitSat 30s linear infinite;
+}
+@keyframes orbitSat {
+  from{
+    transform: rotate(360deg) translateX(380px) rotate(-360deg) ;
+  }
+  to{
+    transform: rotate(0deg) translateX(380px) rotate(0deg) ;
+  }
+}
+
+#saturn p {
+  position: absolute;
+  left: 30px;
+  top: -9px;
+  color: white;
+}
+
+
+
+
+.uranos-line {
+  width: 870px; height: 870px;
+}
+
+#uranos {
+  width: 40px; height: 40px;
+  background: linear-gradient(rgba(71, 134, 206, 1), rgba(9, 44, 83, 1));
+  border-radius: 50%;
+  box-shadow: -4px -4px 14px rgb(71, 134, 206);
+  position: absolute;
+  left: 48%; top: 47%;
+  transform: translate(-50%, -50%);
+  animation: orbitUra 80s linear infinite;
+}
+@keyframes orbitUra {
+  from{
+    transform: rotate(0deg) translateX(435px) rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg) translateX(435px) rotate(-360deg);
+  }
+}
+
+#uranos p {
+  position: absolute;
+  left: 30px;
+  top: -9px;
+  color: white;
+}
+
+
+.neptune-line {
+  width: 960px; height: 960px;
+}
+
+#neptune {
+  width: 40px; height: 40px;
+  background: linear-gradient(rgb(14, 63, 119), rgb(14, 36, 61));
+  border-radius: 50%;
+  box-shadow: -4px 2px 56px rgb(10, 50, 97);
+  position: absolute;
+  left: 48%; top: 48%;
+  transform: translate(-50%, -50%);
+  animation: orbitNep 190s linear infinite;
+  z-index: -1;
+}
+@keyframes orbitNep {
+  from{
+    transform: rotate(0deg) translateX(478px) rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg) translateX(478px) rotate(-360deg);
+  }
+}
+
+#neptune p {
+  position: absolute;
+  left: 30px;
+  top: -9px;
+  color: white;
+}
+
+.controller {
+  display: grid;
+  row-gap: 2rem;
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: translateX 1s ease;
+}
+
+.btn h6 {
+  cursor: pointer;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 300;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.btn h6:hover {
+  opacity: 1;
+}
+
+.all-btn h6{
+  cursor: pointer;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 300;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.animate{
+  cursor: pointer;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 300;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  left: 5%;
+  top: 5%;
+}
+
+
+
+.audio {
+  position: fixed;
+  bottom: 6%;
+  right: 3%;
+}
+
+audio::-webkit-media-controls-enclosure {
+  background-color: rgb(255, 255, 255);
+  border-radius: 100px;
+  opacity: 0.3;
+}
+audio::-webkit-media-controls-overlay-enclosure {
+  backdrop-filter: blur(5px);
+}
+
+.next {
+  font-size: 5rem;
+  color: white;
+  position: absolute;
+  font-weight: 500;
+  top: 50%; right: 3%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+
+
+.audio {
+  position: fixed;
+  bottom: 6%;
+  right: 3%;
+}
+
+audio::-webkit-media-controls-enclosure {
+  background-color: rgb(255, 255, 255);
+  border-radius: 100px;
+  opacity: 0.3;
+}
+audio::-webkit-media-controls-overlay-enclosure {
+  backdrop-filter: blur(5px);
+}
+
+.next {
+  font-size: 5rem;
+  color: white;
+  position: absolute;
+  font-weight: 500;
+  top: 50%; right: 3%;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
