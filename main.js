@@ -5,13 +5,13 @@ const planets = document.querySelectorAll('.line');
 const names = document.querySelectorAll('.name');
 const background = document.querySelector('#solar-system');
 const all = document.querySelector('.all-btn');
-const bortex = document.querySelector('.threeD-btn');
+const vortex = document.querySelector('.threeD-btn');
 const normal = document.querySelector('.twoD-btn');
 const zoom = document.querySelector('.zoom-out')
 
 
 // 3D
-bortex.addEventListener('click', () => {
+vortex.addEventListener('click', () => {
   planets.forEach(el => {
     el.style.animation = `bgRotate 30s linear infinite`;
   })
