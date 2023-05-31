@@ -4,7 +4,7 @@ import { RenderPass } from 'RenderPass';
 import { EffectComposer } from 'EffectComposer';
 import { UnrealBloomPass } from 'UnrealBloomPass';
 
-// 장면, 카메라, 조명 생성
+// HTML에 출력을 위한 기본 3요소 _ 장면, 카메라, 조명 생성
 let scene = new THREE.Scene()
 let camera = new THREE.PerspectiveCamera(100, 1)
 camera.position.set(0, 0, 50);
@@ -14,7 +14,8 @@ light.castShadow = true; // default false
 light.receiveShadow = true
 scene.add(light)
 
-// html에 렌더해줄 렌더러
+// html에 렌더해줄 렌더러 생성
+// 출력해줄 HTML 위치를 지정, antialias로 계단현상 완화
 let renderer = new THREE.WebGLRenderer({
   canvas: document.getElementById('sun'),
   antialias: true,
@@ -37,9 +38,12 @@ renderer.outputColorSpace = THREE.SRGBColorSpace;
 // );
 // composer.addPass(bloomPass);
 
+// GLTF파일을 로드해줄 로더로 .gltf 파일을 불러와 scene에 더해줌.
 let loader = new GLTFLoader();
 loader.load('sun/scene.gltf', function (gltf) {
   scene.add(gltf.scene);
+  
+// 불러온 gltf를 출력 시 입혀줄 애니메이션
   function animate() {
     requestAnimationFrame(animate)
     gltf.scene.rotation.y += 0.003;
