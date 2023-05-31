@@ -9,19 +9,24 @@
   </head>
   <body>
     <div id="first">
+<!--  3D 작동 시 나타나는 문구 -->
       <h1 class="zoom-out">Please Zoom out..</h1>
       <div id="solar-system">
+<!-- canvas => three.js  -->
         <canvas id="sun" width="500px" height="500px"></canvas>
+<!-- Mercury  -->
         <div class="mercury-line line">
           <div id="mercury">
             <p data-id="0" class="name">Mercury</p>
           </div>
         </div>
+<!-- Venus outline, Venus -->
         <div class="venus-line line">
           <div id="venus">
             <p data-id="1" class="name">Venus</p>
           </div>
         </div>
+<!-- Earth, Moon -->
         <div class="earth-line line">
           <div id="earth">
             <div class="moon-line">
@@ -32,16 +37,19 @@
             <p data-id="2" class="name">Earth</p>
           </div>
         </div>
+<!-- Mars -->
         <div class="mars-line line">
           <div id="mars">
             <p data-id="3" class="name">Mars</p>
           </div>
         </div>
+<!-- Jupiter -->
         <div class="jupiter-line line">
           <div id="jupiter">
             <p data-id="4" class="name">Jupiter</p>
           </div>
         </div>
+<!-- Saturn -->
         <div class="saturn-line line">
           <div id="saturn">
             <div class="saturn-inner-line"></div>
@@ -53,17 +61,21 @@
             <p data-id="5" class="name">Saturn</p>
           </div>
         </div>
+<!-- Uranos -->
         <div class="uranos-line line">
           <div id="uranos">
             <p data-id="6" class="name">Uranos</p>
           </div>
         </div>
+<!-- Neptune -->
         <div class="neptune-line line">
           <div id="neptune">
             <p data-id="7" class="name">Neptune</p>
           </div>
         </div>
       </div>
+      
+<!-- 각 행성의 display 조작 롤컨트롤 -->
       <div class="controller">
         <div class="all-btn">
           <h6 style="color: white">All</h6>
@@ -93,16 +105,19 @@
           <h6 data-id="7" style="color: white">Neptune</h6>
         </div>
       </div>
+<!-- 3D, 2D 조작 버튼 -->
       <div class="animate">
         <h3 class="threeD-btn">3D</h3>
         <h3 class="twoD-btn">2D</h3>
       </div>
+<!-- Audio Player -->
       <div class="audio">
         <audio src="./audio/태양계.mp3" autoplay controls loop></audio>
       </div>
     </div>
   </body>
 
+<!-- Import Map  -->
   <script type="importmap">
     {
       "imports": {
