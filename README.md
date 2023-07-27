@@ -10,3 +10,4 @@
 - CSS의 position 속성 경험치 상승
 - JS를 통한 html 조작 경험치 상승
 - 감성 상승
+- three.js의 기본을 학습 (gltf파일 가져와 화면에 렌더하기)
